@@ -1,0 +1,20 @@
+{
+  "name": "postgres-dwh",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "pg": "^8.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
