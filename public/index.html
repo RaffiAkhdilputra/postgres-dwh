@@ -48,7 +48,7 @@
   </table>
 
   <script>
-    fetch("http://localhost:3000/api/etl/run")
+    fetch("http://localhost:3000/api/reports")
       .then(res => res.json())
       .then(data => {
         const tbody = document.getElementById("report-body");
@@ -56,10 +56,13 @@
 
         data.forEach(row => {
           const tr = document.createElement("tr");
+
+          const totalSales = Number(row.total_sales); // 🔥 FIX UTAMA
+
           tr.innerHTML = `
             <td>${row.year}</td>
             <td>${row.month}</td>
-            <td>${row.total_sales.toLocaleString()}</td>
+            <td>${totalSales.toLocaleString("id-ID")}</td>
           `;
           tbody.appendChild(tr);
         });

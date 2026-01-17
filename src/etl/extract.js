@@ -1,6 +1,16 @@
-import { pool } from '../db/postgres.js'
+import { pool } from "../db/postgres.js"
 
 export async function extract() {
-    const res = await pool.query("SELECT * FROM tansaction")
-    return res.rows
+    const query = `
+        SELECT
+            transaction_id,
+            transaction_date,
+            product_id,
+            customer_id,
+            quantity
+        FROM transactions
+    `
+
+    const { rows } = await pool.query(query)
+    return rows
 }
